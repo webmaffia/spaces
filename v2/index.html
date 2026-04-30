@@ -1,24 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SPACES — Home</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: #faf7f2;
-    }
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-      vertical-align: top;
-    }
-  </style>
+<!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]--><head>
+	<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- IMPORTANT -->
+<!-- Change this value -->
+<!--
+    Needed for name resolution when providing relative paths.
+    Uncomment if required to solve rewritten path
+-->
+<!-- <base href="/new-project-template/" /> -->
+
+<link rel="apple-touch-icon" href="assets/images/favicon.ico">
+<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../../../6aqOcY1qPWvg.com/US/wp-content/uploads/2019/04/mnBod7QPbsES.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="assets/css/critical.css" media="all">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all">
+
+<!-- MANIFEST FILE FOR PWA -->
+<!-- <link rel="manifest" href="manifest.json"> -->
+
+<!-- THEME Color -->
+<!--
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+<meta name="theme-color" content="#249adf">
+-->
+	<title>SPACES</title>
+
+	<style>
+		.wrapper{
+			position: relative;
+		}
+		.menu-image,.smart-img{
+			position:absolute;
+			top:0;
+			width:100vw;
+			display:none
+		}
+		.menu-click{
+			position: absolute;
+			width: 4.479vw;
+			height:2.604vw;
+			
+			top:0.677vw;
+			right:7.24vw;
+			pointer-events: all;
+		}
+
+		.smartGuide-click {
+		    position: absolute;
+    width: 9.479vw;
+    height: 3.604vw;
+  
+    top: 41.042vw;
+    right: 8.24vw;
+    pointer-events: all;
+
+		}
+
+		.smartGuide-close{
+			position: absolute;
+    width: 4.479vw;
+    height: 2.604vw;
+
+    top: 12vw;
+    right: 13.24vw;
+    pointer-events: all;
+		}
+
+		.show-menu,.show-guide{
+			display:block;
+		}
+	</style>
+
 </head>
 <body>
-  <img src="/v2/v2.png" alt="SPACES home textile and lifestyle — full page design">
-</body>
-</html>
+	<header class="sticky">
+	<img src="assets/img/menu-bar.png" class="navx" alt="">
+	<img src="assets/img/menuafterscroll.png" class="menu-afterscroll" alt="" srcset="">
+</header>
+	<main class="wrapper">
+		<section class="v1-slider">
+			<div class="item">
+			<img src="assets/img/Slide_1.png" alt="" srcset="">
+	
+			</div>
+
+			<div class="item">
+			<img src="assets/img/Slide_2.png" alt="" srcset="">
+			</div>
+			<!-- <div class="item">
+			<img src="assets/img/Design-3.jpg" alt="" srcset="">
+			</div> -->
+		</section>
+	
+		<div class="menu-image">
+			<img src="assets/img/menu.jpg" alt="" srcset="">
+		</div>
+
+		<a href="#" class="menu-click" id="menuxx"></a>
+
+		<div class="smart-img">
+			<img src="assets/img/Smart-Guide.png" alt="" srcset="">
+		</div>
+
+		<a href="#" class="smartGuide-click" id="smartGuide"></a>
+
+		<a href="#" class="smartGuide-close" id="smartGuideClose"></a>
+	
+
+
+	</main>
+
+
+
+	<footer>
+    <img src="assets/img/footer.png" alt="" srcset="">
+</footer>
+<script src="assets/build/common.js"></script>
+
+<script>
+  $(document).ready(function(){
+    $("#menuxx").click(function(){
+      $('.menu-image').toggleClass("show-menu");
+    });
+
+    $("#smartGuide,#smartGuideClose").click(function(){
+      $('.smart-img').toggleClass("show-guide");
+    });
+  });
+</script>
+
+
+</body></html>
