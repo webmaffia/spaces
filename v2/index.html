@@ -72,11 +72,39 @@
 		.show-menu,.show-guide{
 			display:block;
 		}
+		.menu-click {
+		position: absolute;
+		width: 4.479vw;
+		height: 2.604vw;
+		top: 4.177vw;
+		left: 10.24vw;
+		pointer-events: all;
+		z-index: 10;
+	}
+
+	.nav-shop-img{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		display: none;
+		z-index: 9;
+	}
+	.nav-shop-img img{
+		width: 100%;
+		display: block;
+	}
+	.show-nav-shop{
+		display: block;
+	}
 	</style>
 
 </head>
 <body>
 	<header class="sticky">
+		<div class="menu-click-container">
+			<a href="#" class="menu-click" id="menuxx"></a>
+		</div>
 	<img src="assets/img/menu-bar.png" class="navx" alt="">
 	<img src="assets/img/menuafterscroll.png" class="menu-afterscroll" alt="" srcset="">
 </header>
@@ -97,6 +125,10 @@
 	
 		<div class="menu-image">
 			<img src="assets/img/menu.jpg" alt="" srcset="">
+		</div>
+
+		<div class="nav-shop-img">
+			<img src="navigation-shop.png" alt="">
 		</div>
 
 		<a href="#" class="menu-click" id="menuxx"></a>
@@ -128,6 +160,19 @@
 
     $("#smartGuide,#smartGuideClose").click(function(){
       $('.smart-img').toggleClass("show-guide");
+    });
+
+    var navShopHideTimer;
+    $(".menu-click, .nav-shop-img").on("mouseenter", function(){
+      clearTimeout(navShopHideTimer);
+      $('.nav-shop-img').addClass("show-nav-shop");
+    });
+    $(".menu-click, .nav-shop-img").on("mouseleave", function(){
+      navShopHideTimer = setTimeout(function(){
+        if(!$(".menu-click:hover").length && !$(".nav-shop-img:hover").length){
+          $('.nav-shop-img').removeClass("show-nav-shop");
+        }
+      }, 100);
     });
   });
 </script>
